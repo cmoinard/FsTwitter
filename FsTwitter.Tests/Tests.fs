@@ -8,6 +8,13 @@ open Xunit
 open Swensen.Unquote 
 
 [<Fact>]
+let ``Should be empty when no followers and no tweets`` () =
+
+    let storage = EventStorage()
+    
+    test <@ Timeline.query storage.Events = { tweets = [] } @>
+
+[<Fact>]
 let ``Should show its own tweets when no followers`` () =
 
     let date = DateTime(2019, 07, 01)
