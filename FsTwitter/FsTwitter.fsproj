@@ -5,7 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="Events.fs" />
+        <Compile Include="Commands.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Queries\Timeline.fs" />
     </ItemGroup>
 
 </Project>
