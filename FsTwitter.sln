@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsTwitter", "FsTwitter\FsTwitter.fsproj", "{56F846F4-7A13-4CFA-A70F-06860F311223}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsTwitter.Tests", "FsTwitter.Tests\FsTwitter.Tests.fsproj", "{984363B5-5186-4AFE-8747-042D0FB09093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56F846F4-7A13-4CFA-A70F-06860F311223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F846F4-7A13-4CFA-A70F-06860F311223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F846F4-7A13-4CFA-A70F-06860F311223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F846F4-7A13-4CFA-A70F-06860F311223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{984363B5-5186-4AFE-8747-042D0FB09093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{984363B5-5186-4AFE-8747-042D0FB09093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{984363B5-5186-4AFE-8747-042D0FB09093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{984363B5-5186-4AFE-8747-042D0FB09093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
