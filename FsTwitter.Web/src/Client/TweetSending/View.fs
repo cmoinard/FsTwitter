@@ -1,5 +1,6 @@
 module Client.TweetSending.View
 
+open System
 open Fable.React
 open Fulma
 
@@ -11,6 +12,10 @@ let button txt onClick =
         [ str txt ]
 
 let root (model : Model) (dispatch : Msg -> unit) =
+    let sendDisabled =
+        model.isSending ||
+        String.IsNullOrWhiteSpace model.text
+
     let errorMessage =
         match model.error with
         | Some e -> str e
@@ -26,7 +31,7 @@ let root (model : Model) (dispatch : Msg -> unit) =
             [ Button.IsFullWidth
               Button.Color IsPrimary
               Button.IsLoading model.isSending
-              Button.Disabled model.isSending
+              Button.Disabled sendDisabled
               Button.OnClick (fun _ -> dispatch Send) ]
             [ str "Tweet"  ]
 
