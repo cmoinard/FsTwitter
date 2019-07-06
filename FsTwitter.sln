@@ -4,6 +4,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsTwitter", "FsTwitter\FsTw
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsTwitter.Tests", "FsTwitter.Tests\FsTwitter.Tests.fsproj", "{984363B5-5186-4AFE-8747-042D0FB09093}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "FsTwitter.Web\src\Client\Client.fsproj", "{BA5BD019-9810-4740-A9C4-FFF9D148B3D2}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "FsTwitter.Web\src\Server\Server.fsproj", "{5B52F95C-B536-4D97-A189-4143A03F1390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C6949149-9C5A-4299-85C8-3DE27904F870}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{984363B5-5186-4AFE-8747-042D0FB09093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984363B5-5186-4AFE-8747-042D0FB09093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{984363B5-5186-4AFE-8747-042D0FB09093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5BD019-9810-4740-A9C4-FFF9D148B3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5BD019-9810-4740-A9C4-FFF9D148B3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5BD019-9810-4740-A9C4-FFF9D148B3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5BD019-9810-4740-A9C4-FFF9D148B3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B52F95C-B536-4D97-A189-4143A03F1390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B52F95C-B536-4D97-A189-4143A03F1390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B52F95C-B536-4D97-A189-4143A03F1390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B52F95C-B536-4D97-A189-4143A03F1390}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA5BD019-9810-4740-A9C4-FFF9D148B3D2} = {C6949149-9C5A-4299-85C8-3DE27904F870}
+		{5B52F95C-B536-4D97-A189-4143A03F1390} = {C6949149-9C5A-4299-85C8-3DE27904F870}
 	EndGlobalSection
 EndGlobal
