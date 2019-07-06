@@ -78,12 +78,11 @@ let button txt onClick =
         [ str txt ]
 
 let showTimeline timeline =
-    let content =
+    let htmlTweets =
         timeline.tweets
-//        |> List.map (fun t -> RawText t.body :> ReactElement)
-        |> List.map (fun t -> str t.body)
+        |> List.fold (fun acc t -> acc + t.body) ""
 
-    div [] content
+    div [ DangerouslySetInnerHTML { __html = htmlTweets } ] []
 
 let showTimelineState =
     function
