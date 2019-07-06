@@ -7,8 +7,16 @@ open FSharp.Control.Tasks.V2
 open Giraffe
 open Saturn
 
+open FsTwitter.Events
 open System
 open FsTwitter.Queries
+open Microsoft.AspNetCore.Http
+open Microsoft.Net.Http.Headers
+open FSharp.Control.Tasks.V2.ContextInsensitive
+open Giraffe.GiraffeViewEngine
+
+open FsTwitter.Queries
+open Shared
 
 let tryGetEnv = System.Environment.GetEnvironmentVariable >> function null | "" -> None | x -> Some x
 
@@ -18,12 +26,28 @@ let port =
     "SERVER_PORT"
     |> tryGetEnv |> Option.map uint16 |> Option.defaultValue 8085us
 
+
+let storage = EventStorage()
+
+let ok () : HttpHandler =
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        ctx.SetStatusCode 200
+        task { return Some ctx }
+
 let webApp = router {
     getf "/api/timeline/%s" (fun _ ->
-            { tweets = [
-                { author = "chris"; body = "<div>toto</div>"; date = DateTime.Now }
-            ] }
-            |> json )
+        Timeline.query storage.Events
+        |> json)
+
+    post "/api/tweet" (fun next ctx ->
+        task {
+            let! model = ctx.BindJsonAsync<TweetDto>()
+
+            let tweet = { user = model.user; content = model.text; date = DateTime.Now }
+            storage.Append <| TweetSent tweet
+
+            return! json model next ctx
+        })
 }
 
 let app = application {

@@ -1,5 +1,5 @@
 namespace Shared
 
-type Counter = { Value : int }
-
-
+type TweetDto =
+    { user: string
+      text: string }

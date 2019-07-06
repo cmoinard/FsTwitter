@@ -18,6 +18,10 @@ let root (model : Model) (dispatch : Msg -> unit) =
                 [ Heading.h2 [ ]
                     [ str "F# Twitter" ] ] ]
 
+          Container.container [] [
+              TweetSending.View.root model.tweetSending (TweetSendingMsg >> dispatch)
+          ]
+
           Container.container []
               [ Content.content [ Content.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ] ]
                     [ timeline

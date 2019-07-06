@@ -9,11 +9,19 @@
         <None Include="paket.references" />
         <Compile Include="..\Shared\Shared.fs" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <Compile Include="TweetSending\Types.fs" />
+        <Compile Include="TweetSending\State.fs" />
+        <Compile Include="TweetSending\View.fs" />
+    </ItemGroup>
+    
     <ItemGroup>
       <Compile Include="Timeline\Types.fs" />
       <Compile Include="Timeline\State.fs" />
       <Compile Include="Timeline\View.fs" />
     </ItemGroup>
+    
     <ItemGroup>
       <Compile Include="Main\Types.fs" />
       <Compile Include="Main\State.fs" />
