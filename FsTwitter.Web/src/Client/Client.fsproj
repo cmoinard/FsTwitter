@@ -5,10 +5,20 @@
         <DefineConstants>FABLE_COMPILER</DefineConstants>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="index.html"/>
-        <None Include="paket.references"/>
-        <Compile Include="..\Shared\Shared.fs"/>
-        <Compile Include="Client.fs"/>
+        <None Include="index.html" />
+        <None Include="paket.references" />
+        <Compile Include="..\Shared\Shared.fs" />
     </ItemGroup>
-    <Import Project="..\..\.paket\Paket.Restore.targets"/>
+    <ItemGroup>
+      <Compile Include="Timeline\Types.fs" />
+      <Compile Include="Timeline\State.fs" />
+      <Compile Include="Timeline\View.fs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Include="Main\Types.fs" />
+      <Compile Include="Main\State.fs" />
+      <Compile Include="Main\View.fs" />
+      <Compile Include="Client.fs" />
+    </ItemGroup>
+    <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
